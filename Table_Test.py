@@ -1,4 +1,4 @@
-from MyHashFunction import HashTable
+from HashTable import HashTable
 import collections
 import logging
 
@@ -11,6 +11,8 @@ def open_file(file):
     return h.hashtable
 
 print open_file("random.txt")
+print h.add_to_table("the", 10)
+print h.get_value("the")
 
 
 #Performance test functions -> Speed
@@ -20,10 +22,10 @@ def time(word):
     start = time.clock()
     h.get_value(word)
     return time.clock() - start
-
+    
+'''
 #Non-collision lookup times ------> 
 
-   
 print time("the")
 # --> 1.79999999972e-05 
 print time("a")
@@ -39,7 +41,7 @@ print time("James")
 print time("Business")
 # --> 9.99999999962e-06
 
-#collision words lookup times ------>  
+#collided words lookup times ------>  
   
 print time('Advice!')
 # --> 0.001278
@@ -55,3 +57,5 @@ print time('nought')
 # --> 1.19999999981e-05
 print time('Noble')
 # --> 0.000702
+
+'''
